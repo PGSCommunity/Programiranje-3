@@ -1,8 +1,45 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
+class Auto {
+    public:
+        string model;
+        string boja;
+        double brzina;
+        double novcanaKazna(double iznos);
+};
 
+double Auto::novcanaKazna(double iznos) {
+    return iznos;
+}
+
+int main() {
+    Auto auto1, auto2;
+
+    auto1.model = "Ferrari";
+    auto1.boja = "crne";
+    auto1.brzina = 314;
+
+    cout << "Unesite model auta!\n";
+    getline(cin, auto2.model);
+
+    cout << "Unesite boju auta!\n";
+    getline(cin, auto2.boja);
+
+    cout << "Unesite brzinu auta!\n";
+    unos:cin >> auto2.brzina;
+
+    if (auto2.brzina > auto1.brzina) goto unos;
+
+    cout << "Ja vozim " << auto1.model << " auto, " << auto1.boja << " boje i jurim " << auto1.brzina << " kilometara na sat.\n";
+    cout << "Moj drug vozi " << auto2.model << " auto, " << auto2.boja << " boje i ne juri bas jer vozi " << auto2.brzina << " kilometara na sat.\n";
+
+    double iznosKazne;
+    cout << "Unesite iznos novcane kazne prvog vozaca!\n";
+    cin >> iznosKazne;
+
+    cout << "Posto sam jurio " << auto1.brzina << " kilometara na sat morao sam platiti novcanu kaznu od " << auto1.novcanaKazna(iznosKazne) << " maraka :((\n";
     return 0;
 }
 /*
