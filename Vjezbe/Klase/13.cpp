@@ -1,8 +1,28 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int main() {
+class Prost {
+    public:
+        bool JelBrojProst(int broj);
+};
 
+bool Prost::JelBrojProst(int broj) {
+    for(int i = 2; i <= sqrt(broj); i++) {
+        if(broj % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    Prost p;
+    int broj;
+
+    cout << "Unesite broj!\n";
+    cin >> broj;
+
+    if(p.JelBrojProst(broj)) cout << "Broj je prost.\n";
+    else cout << "Broj nije prost.\n";
     return 0;
 }
 /*
