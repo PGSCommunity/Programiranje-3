@@ -1,8 +1,34 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+class Aritmeticka {
+    public:
+        float broj, suma = 0, brojac = 0;
+        void Obrada();
+        void Ispis();
+};
 
+void Aritmeticka::Obrada() {
+    cout << "Unesite brojeve! (Unosom 0 radnja se prekida!)\n";
+
+    while(cin >> broj) {
+        if(broj == 0) break;
+        if(broj > 0) {
+            suma += broj;
+            brojac++;
+        }
+    }
+}
+
+void Aritmeticka::Ispis() {
+    cout << "Aritmeticka sredina pozitivnih brojeva je: " << suma / brojac << '\n';
+}
+
+int main() {
+    Aritmeticka a;
+
+    a.Obrada();
+    a.Ispis();
     return 0;
 }
 /*
