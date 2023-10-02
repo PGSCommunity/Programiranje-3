@@ -1,8 +1,44 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+class Racun_Ime {
+    public:
+        int x, y;
+        void Unos();
+        void BrojDjeljivih();
+        int SumaNeparnih();
+};
 
+void Racun_Ime::Unos() {
+    cout << "Unesite brojeve x i y!\n";
+    cin >> x >> y;
+}
+
+void Racun_Ime::BrojDjeljivih() {
+    int br(0);
+    for(int i = x; i <= y; i++) {
+        if(i % 2 == 0 && i % 7 == 0) br++;
+    }
+    cout << "Broj parnih brojeva djeljivih sa 7: " << br << '\n';
+}
+
+int Racun_Ime::SumaNeparnih() {
+    int s(0);
+    int a;
+    for(int i = 0; i < y; i++) {
+        cout << "Unesite broj!\n";
+        cin >> a;
+        if(a % 2 != 0) s += a;
+    }
+    return a * x;
+}
+
+int main() {
+    Racun_Ime r;
+    
+    r.Unos();
+    r.BrojDjeljivih();
+    cout << r.SumaNeparnih();
     return 0;
 }
 /*
