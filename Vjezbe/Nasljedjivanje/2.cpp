@@ -1,8 +1,38 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
+class Zivotinja {
+    public:
+        void glasanje();
+        void spavaj();
+        void jedi();
+};
 
+void Zivotinja::glasanje() {
+    cout << "Mjauuuu\n";
+}
+
+void Zivotinja::spavaj() {
+    cout << "Zzzzzzzz\n";
+}
+
+void Zivotinja::jedi() {
+    cout << "Om nom nom, om nom\n";
+}
+
+class Macka: public Zivotinja {
+    public:
+        string ime;
+        string vrsta;
+};
+
+int main() {
+    Macka Garfild;
+
+    Garfild.ime = "Garfild";
+    Garfild.glasanje();
+    cout << "Ime macke: " << Garfild.ime << '\n'; 
     return 0;
 }
 
