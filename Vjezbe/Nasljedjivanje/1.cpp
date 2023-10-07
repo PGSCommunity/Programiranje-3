@@ -1,8 +1,40 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+class Kvadrat {
+    protected:
+        int a;
+    public:
+        void upis();
+        float rezultat();
+};
 
+void Kvadrat::upis() {
+    cout << "Unesite broj a!\n";
+    cin >> a;
+}
+
+float Kvadrat::rezultat() {
+    return a * a;
+}
+
+class Kub:public Kvadrat {
+    public:
+        float rezultat();
+};
+
+float Kub::rezultat() {
+    return a * a * a;
+}
+
+int main() {
+    Kvadrat k1;
+    k1.upis();
+    cout << k1.rezultat() << '\n';
+
+    Kub k2;
+    k2.upis();
+    cout << k2.rezultat() << '\n';
     return 0;
 }
 /*
