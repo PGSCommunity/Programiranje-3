@@ -30,7 +30,7 @@ int Racun_Ime::SumaNeparnih() {
         cin >> a;
         if(a % 2 != 0) s += a;
     }
-    return a * x;
+    return s * x;
 }
 
 int main() {
