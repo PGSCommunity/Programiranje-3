@@ -1,8 +1,49 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+class Vozilo {
+    protected:
+        double kilometraza;
+    public:
+        Vozilo(double k);
+        void Zaglavlje();
+};
 
+Vozilo::Vozilo(double k) {
+    kilometraza = k;
+}
+
+void Vozilo::Zaglavlje() {
+    cout << "Najveca moguca prijedjenja kilkometraza auta je: " << kilometraza << '\n';
+}
+
+class SportskoAuto:public Vozilo {
+    protected:
+        string naziv;
+        double prosjecna_brzina;
+    public:
+        SportskoAuto(double k, string n, double p):Vozilo(k) {
+            naziv = n;
+            prosjecna_brzina = p;
+        }
+        double IzracunajVrijeme();
+        void Ispisi();
+};
+
+double SportskoAuto::IzracunajVrijeme() {
+    return kilometraza / prosjecna_brzina;
+}
+
+void SportskoAuto::Ispisi() {
+    cout << "Autu " << naziv << " treba " << IzracunajVrijeme() << " da bi dostigao najvecu mogucu prijedjenu kilometrazu od " << kilometraza << " ako stalno vozi brzinom " << prosjecna_brzina << '\n';
+}
+
+int main() {
+    Vozilo v(3000);
+    v.Zaglavlje();
+
+    SportskoAuto sp(3000, "Lamborgini", 300);
+    sp.Ispisi();
     return 0;
 }
 
