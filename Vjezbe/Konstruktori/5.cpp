@@ -1,8 +1,48 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
+class Tacka {
+    protected:
+        double x, y;
+    public:
+        Tacka();
+        Tacka(double X, double Y);
+        double Udaljenost(Tacka tacka);
+        double vratiX() {
+            return x;
+        }
+        double vratiY() {
+            return y;
+        }
+};
+
+Tacka::Tacka() {
+    x = 0;
+    y = 0;
+}
+
+Tacka::Tacka(double X, double Y) {
+    x = X;
+    y = Y;
+}
+
+double Tacka::Udaljenost(Tacka tacka) {
+    return sqrt(pow(tacka.x, 2) + pow(tacka.y, 2));
+}
+
+double Udaljenost(Tacka tacka1, Tacka tacka2) {
+    double x = tacka1.vratiX() - tacka2.vratiX();
+    double y = tacka1.vratiY() - tacka2.vratiY();
+    return sqrt(pow(x, 2) + pow(y, 2));
+}
+
 int main() {
-    
+    Tacka tacka1;
+    Tacka tacka2(3, 4);
+
+    cout << tacka1.Udaljenost(tacka2) << '\n';
+    cout << Udaljenost(tacka1, tacka2) << '\n';
     return 0;
 }
 
