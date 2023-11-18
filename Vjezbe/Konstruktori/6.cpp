@@ -1,8 +1,31 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int main() {
+class Kocka {
+    private:
+        int a;
+    public:
+        Kocka(int x) {
+            a = x;
+        }
 
+        int Povrsina();
+        int Zapremina();
+};
+
+int Kocka::Povrsina() {
+    return 6 * pow(a, 2);
+}
+
+int Kocka::Zapremina() {
+    return pow(a, 3);
+}
+
+int main() {
+    Kocka k(3);
+    cout << "Povrsina kocke iznosi: " << k.Povrsina() << '\n';
+    cout << "Zapremina kocke iznosi: " << k.Zapremina() << '\n';
     return 0;
 }
 
