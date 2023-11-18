@@ -1,8 +1,31 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+class Pretvorba {
+    private:
+        float h;
+    public:
+        Pretvorba() {
+            h = 100;
+        }
 
+        Pretvorba(int cm) {
+            h = cm;
+        }
+
+        float pretvorba();
+};
+
+float Pretvorba::pretvorba() {
+    return h / 30.48;
+}
+
+int main() {
+    Pretvorba p1, p2(30);
+
+    cout << "Pretvorba centimetara u stope iznosi: " << p1.pretvorba() << '\n';
+    cout << "Pretvorba centimetara u stope iznosi: " << p2.pretvorba() << '\n';
+    
     return 0;
 }
 
