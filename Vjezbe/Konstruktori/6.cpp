@@ -12,6 +12,8 @@ class Kocka {
 
         int Povrsina();
         int Zapremina();
+
+        ~Kocka() { }
 };
 
 int Kocka::Povrsina() {
