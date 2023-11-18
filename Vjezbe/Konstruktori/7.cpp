@@ -1,7 +1,27 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
+class Valjak {
+    private:
+        double radijus, visina;
+    public:
+        double Zapremina();
+};
+
+double Valjak::Zapremina() {
+    const double PI = 3.14;
+    cout << "Unesite radijus valjka!\n";
+    cin >> radijus;
+    cout << "Unesite visinu valjka!\n";
+    cin >> visina;
+    return PI * pow(radijus, 2) * visina;
+}
+
 int main() {
+    Valjak v1, v2;
+    cout << v1.Zapremina() << '\n';
+    cout << v2.Zapremina() << '\n';
     return 0;
 }
 
