@@ -13,7 +13,9 @@ class Kocka {
         int Povrsina();
         int Zapremina();
 
-        ~Kocka() { }
+        ~Kocka() { 
+            cout << "Pozvan je destruktor!\n";
+        }
 };
 
 int Kocka::Povrsina() {
