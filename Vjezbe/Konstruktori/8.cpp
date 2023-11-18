@@ -1,8 +1,44 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int main() {
+class Prizma {
+    private: 
+        float a, h;
+    public:
+        Prizma() {
+            cout << "Unesite duzinu prizme!\n";
+            cin >> a;
+            cout << "Unesite visinu prizme!\n";
+            cin >> h;
+        }
 
+        Prizma(int x, int y) {
+            a = x;
+            h = y;
+        }
+
+        float Povrsina();
+        float Zapremina();
+};
+
+float Prizma::Povrsina() {
+    return 6 * pow(a, 2);
+}
+
+float Prizma::Zapremina() {
+    return ((3 * sqrt(3)) / 2) * pow(a, 2) * h; 
+}
+
+int main() {
+    Prizma p1, p2(4, 5);
+    cout << "Povrsina 1. prizme inzosi: " << p1.Povrsina() << '\n'; 
+    cout << "Zapremina 1. prizme inzosi: " << p1.Zapremina() << '\n'; 
+    
+    cout << endl;
+    
+    cout << "Povrsina 2. prizme iznosi: " << p2.Povrsina() << '\n';
+    cout << "Zapremina 2. prizme iznosi: " << p2.Zapremina() << '\n';
     return 0;
 }
 
