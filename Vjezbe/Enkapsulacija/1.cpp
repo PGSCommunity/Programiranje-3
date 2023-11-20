@@ -1,8 +1,27 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+class Zaposlenik {
+    private:
+        double plata;
+    public:
+        void setPlata(double p) {
+            plata = p;
+        } 
+        double getPlata() {
+            return plata;
+        }
+        double bonus() {
+            return 2 * plata;
+        }
+};
 
+int main() {
+    Zaposlenik z;
+    z.setPlata(2350);
+
+    cout << "Plata zaposlenika iznosi: " << z.getPlata() << '\n';
+    cout << "Dodatak na platu zaposlenika je: " << z.bonus() << '\n';
     return 0;
 }
 
