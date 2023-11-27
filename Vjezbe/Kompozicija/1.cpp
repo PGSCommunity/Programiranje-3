@@ -1,8 +1,64 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int main() {
+class Brojevi {
+    protected:
+        float a, b, c;
+    public:
+        Brojevi(float x, float y, float z) {
+            a = int(x);
+            b = int(y);
+            c = int(z);
+        }
 
+        virtual void Naslov() {
+            cout << "Cio dio unesenih brojeva iznosi:\n";
+        }
+
+        virtual void Ispis() {
+            cout << "Prvi broj: " << a << '\n';
+            cout << "Drugi broj: " << b << '\n';
+            cout << "Treci broj: " << c << '\n';
+        }
+
+        void Izvjestaj() {
+            Naslov();
+            Ispis();
+        }
+
+        ~Brojevi() {}
+};
+
+class Trougao: public Brojevi {
+    protected:
+        float povrsina;
+    public:
+        Trougao(float a, float b, float c) : Brojevi(a, b, c) {
+            povrsina = 0;
+        }
+
+        void Naslov() {
+            cout << "Projevravamo da li ucitane stranice cine trougao:\n";
+        }
+
+        void Ispis() {
+            if ((a + b > c) && (a + c > b) && (c + b > a)) {
+                int s = (a + b + c) / 2;
+                povrsina = sqrt(s * (s - a) * (s - b) * (s - c));
+                cout << "Povrsina trougla iznosi: " << povrsina << '\n';
+            } else { 
+                cout << "Stranice ne cine trougao!\n";
+            }
+        }
+};
+
+int main() {
+    Brojevi b(2.33, 4.5, 6);
+    b.Izvjestaj();
+
+    Trougao t(3.2, 4.5, 5.3);
+    t.Izvjestaj();
     return 0;
 }
 
