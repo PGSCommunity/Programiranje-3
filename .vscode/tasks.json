@@ -9,6 +9,8 @@
                 "-g",
                 "${workspaceFolder}\\Vjezbe\\Organizacija koda\\1\\*.cpp",
                 "${workspaceFolder}\\Vjezbe\\Organizacija koda\\1\\*.h",
+                "${workspaceFolder}\\Vjezbe\\Organizacija koda\\2\\*.cpp",
+                "${workspaceFolder}\\Vjezbe\\Organizacija koda\\2\\*.h",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
