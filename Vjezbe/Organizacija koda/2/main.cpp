@@ -1,17 +1,21 @@
 #include <iostream>
-#include <stdio.h>
+#include "ucenik.h"
+#include "maturant.h"
 using namespace std;
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char** argv) {
-	printf("Hello, world!\n");
+	Ucenik u1("Danin", "III-f");
+	u1.Ispisi();
+	
+	Maturant u2("Sarah", "IV-f", "programiranje");
+	u2.Ispisi();
 	return 0;
 }
 
 /*
 
 Rasporedi sljedecu klasu u pakete:
-lass Ucenik{
+class Ucenik{
 	protected:	
 	string ime, odjeljenje;
 		
