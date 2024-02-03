@@ -2,11 +2,11 @@
 #include <iostream>
 using namespace std;
 
-Broj::unos() {
+void Broj::unos() {
 	cout << "Unesite broj:\n";
 	cin >> b;
 }
 
-Broj::dvostruka() {
+int Broj::dvostruka() {
 	return 2 * b;
 }
