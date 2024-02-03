@@ -1,9 +1,13 @@
 #include <iostream>
 #include <stdio.h>
+#include "broj.h"
 using namespace std;
 
 int main() {
-    printf("Hello, world!\n");
+    Broj broj;
+    
+    broj.unos();
+    printf("Dvostruka vrijednost unesenog broja je: %d\n", broj.dvostruka());
     return 0;
 }
 
