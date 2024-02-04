@@ -1,8 +1,19 @@
 #include <iostream>
+#include "osoba.h"
+#include "vozac.h"
+#include "profesor.h"
+
 using namespace std;
 
 int main(int argc, char** argv) {
-	cout << "Hello, world!\n";
+	Osoba o("Danin");
+	o.predstavljanje();
+	
+	Vozac v("Sarah");
+	v.predstavljanje();
+	
+	Profesor p("Edin");
+	p.predstavljanje();
 	return 0;
 }
 
