@@ -1,7 +1,15 @@
 #include <iostream>
+#include "niz.h"
+#include "matrica.h"
 
 int main(int argc, char** argv) {
-	std::cout << "Hello, World!\n";
+	Niz n;
+	n.unos();
+	n.SumaProizvod();
+	
+	Matrica m;
+	m.unos();
+	m.dijagonala();
 	return 0;
 }
 
