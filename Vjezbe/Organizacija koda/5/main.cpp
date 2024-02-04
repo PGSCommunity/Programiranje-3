@@ -1,8 +1,20 @@
 #include <iostream>
+#include "savrsen.h"
+#include "nzd.h"
 using namespace std;
 
 int main(int argc, char** argv) {
-	cout << "Hello, World!\n";
+	Savrsen s;
+	s.unos();
+	if (s.isSavrsen()) {
+		cout << "Broj je savrsen!\n";
+	} else {
+		cout << "Broj nije savrsen!\n";
+	}
+	
+	NZD n;
+	n.unos();
+	n.nzd();
 	return 0;
 }
 
