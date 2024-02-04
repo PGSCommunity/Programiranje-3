@@ -1,7 +1,13 @@
 #include <iostream>
+#include "trougao.h"
+#include "piramida.h"
 
 int main(int argc, char** argv) {
-	std::cout << "Hello, World!\n";
+	Trougao t(3, 5);
+	cout << "Povrsina jednakokrakog trougla iznosi: " << t.povrsina() << '\n';
+	
+	Piramida p;
+	cout << "Povrsina pravilne sestostrane piramide iznosi: " << p.povrsina() << '\n';
 	return 0;
 }
 
